@@ -44,9 +44,9 @@ check_diff(){
 		echo "No Changes"
 	fi
 
-	slack $ODIR/$DOMAIN/$FOLD $DOMAIN "OLD"
+	if $FOLD; then slack $ODIR/$DOMAIN/$FOLD $DOMAIN "OLD"; fi
 	sleep 3
-	slack $ODIR/$DOMAIN/$FNEW $DOMAIN "NEW"
+	if $FNEW; then slack $ODIR/$DOMAIN/$FNEW $DOMAIN "NEW"; fi
 }
 
 
